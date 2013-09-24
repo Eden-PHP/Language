@@ -19,5 +19,6 @@
     },
     "autoload": {
          "psr-0": { "Eden\\Language\\": "" }
-    }
+    },
+	"target-dir": "Eden/Language"
 }
