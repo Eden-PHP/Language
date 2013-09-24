@@ -1,5 +1,5 @@
 {
-    "name": "eden-php/language",
+    "name": "eden/language",
     "type": "library",
     "description": "Eden language component",
     "keywords": ["eden", "library"],
