@@ -7,11 +7,11 @@
  * distributed with this package.
  */
  
-require_once __DIR__.'/../../Core/library/Eden/Core/Loader.php';
+require_once __DIR__.'/../../Core/Loader.php';
 Eden\Core\Loader::i()
 	->addRoot(true, 'Eden\\Core')
-	->addRoot(realpath(__DIR__.'/../../Language/library'), 'Eden\\Language')
-	->addRoot(realpath(__DIR__.'/../../System/library'), 'Eden\\System')	
-	->addRoot(realpath(__DIR__.'/../../Type/library'), 'Eden\\Type')
+	->addRoot(realpath(__DIR__.'/../..'), 'Eden\\Language')
+	->addRoot(realpath(__DIR__.'/../..'), 'Eden\\System')	
+	->addRoot(realpath(__DIR__.'/../..'), 'Eden\\Type')
 	->register()
 	->load('Controller');

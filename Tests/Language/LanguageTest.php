@@ -7,7 +7,7 @@
  * distributed with this package.
  */
  
-class Eden_Tests_Language_LanguageTest extends \PHPUnit_Framework_TestCase
+class Eden_Language_Tests_Language_LanguageTest extends \PHPUnit_Framework_TestCase
 {
     public function testSet() 
     {
@@ -15,7 +15,7 @@ class Eden_Tests_Language_LanguageTest extends \PHPUnit_Framework_TestCase
 	
 	public function testGet()
 	{
-		$string = eden('language', __DIR__.'/../../../assets/tagalog.php')
+		$string = eden('language', __DIR__.'/../assets/tagalog.php')
 			->get('How are you?');
 		
 		$this->assertEquals('Kumusta ka?', $string);
@@ -24,7 +24,7 @@ class Eden_Tests_Language_LanguageTest extends \PHPUnit_Framework_TestCase
 	public function testGetLanguage()
 	{
 		
-		$language = eden('language', __DIR__.'/../../../assets/tagalog.php')
+		$language = eden('language', __DIR__.'/../assets/tagalog.php')
 			->getLanguage();
 		
 		$this->assertArrayHasKey('How are you?', $language);
@@ -32,7 +32,7 @@ class Eden_Tests_Language_LanguageTest extends \PHPUnit_Framework_TestCase
 	
 	public function testTranslate()
 	{
-		$string = eden('language', __DIR__.'/../../../assets/tagalog.php')
+		$string = eden('language', __DIR__.'/../assets/tagalog.php')
 			->translate('How much is this?', 'Magkano ba ito?')
 			->get('How much is this?');
 		
@@ -43,13 +43,13 @@ class Eden_Tests_Language_LanguageTest extends \PHPUnit_Framework_TestCase
 	{
 		$rand = rand();
 		
-		$class = eden('language', __DIR__.'/../../../assets/tagalog.php')
+		$class = eden('language', __DIR__.'/../assets/tagalog.php')
 			->translate('How much is this?', 'Magkano ba ito? '.$rand)
 			->save();
 		
 		$this->assertInstanceOf('Eden\\Language\\Base', $class);
 		
-		$string = eden('language', __DIR__.'/../../../assets/tagalog.php')
+		$string = eden('language', __DIR__.'/../assets/tagalog.php')
 			->get('How much is this?');
 		
 		$this->assertEquals('Magkano ba ito? '.$rand, $string);
@@ -57,7 +57,7 @@ class Eden_Tests_Language_LanguageTest extends \PHPUnit_Framework_TestCase
 	
 	public function testArrayAccess()
 	{
-		$language = eden('language', __DIR__.'/../../../assets/tagalog.php');
+		$language = eden('language', __DIR__.'/../assets/tagalog.php');
 		
 		$this->assertEquals('Kumusta ka?', $language['How are you?']);
 		
@@ -68,7 +68,7 @@ class Eden_Tests_Language_LanguageTest extends \PHPUnit_Framework_TestCase
 	
 	public function testIterable() 
 	{
-		$language = eden('language', __DIR__.'/../../../assets/tagalog.php');
+		$language = eden('language', __DIR__.'/../assets/tagalog.php');
 		foreach($language as $key => $translation) {
 			$this->assertEquals($language[$key], $translation);
 		}
