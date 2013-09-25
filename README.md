@@ -68,7 +68,7 @@ Most commonly, websites using languages usually start and end with loading and s
 
 1. Fork the main Eden repository (https://github.com/Eden-PHP/Language)
 2. Fire up your local terminal and clone the *MAIN EDEN REPOSITORY* (git clone git://github.com/Eden-PHP/Language.git)
-3. Add your *FORKED EDEN REPOSITORY* as a remote (git remote add fork git@github.com:*github_username*/Core.git)
+3. Add your *FORKED EDEN REPOSITORY* as a remote (git remote add fork git@github.com:*github_username*/Language.git)
 
 ##Making pull requests
 
