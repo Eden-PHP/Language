@@ -62,7 +62,7 @@ Most commonly, websites using languages usually start and end with loading and s
 
 ====
 
-#Contibuting to Eden
+#Contributing to Eden
 
 ##Setting up your machine with the Eden repository and your fork
 
