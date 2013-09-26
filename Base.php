@@ -187,7 +187,7 @@ class Base extends CoreBase implements \ArrayAccess, \Iterator
 	public function save($file = null) 
 	{
 		//argument 1 must be a file or null
-		Argument::i()->test(1, 'file', 'null');
+		Argument::i()->test(1, 'string', 'null');
 		
 		if(is_null($file)) {
 			$file = $this->file;
