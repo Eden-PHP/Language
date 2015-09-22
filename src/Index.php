@@ -232,7 +232,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
 	 * Validates whether if the index is set
 	 * For Iterator interface
 	 *
-	 * @return void
+	 * @return bool
 	 */
     public function valid() 
 	{
