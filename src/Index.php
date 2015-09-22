@@ -9,8 +9,7 @@
 
 namespace Eden\Language;
 
-use Eden\Core\Base as CoreBase;
-use Eden\System\File;
+use Eden\File\Index as File;
 
 /**
  * The base class for all classes wishing to integrate with Eden.
@@ -22,7 +21,7 @@ use Eden\System\File;
  * @package Language
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Base extends CoreBase implements \ArrayAccess, \Iterator 
+class Index extends Base implements \ArrayAccess, \Iterator 
 {
 
 	protected $language = array();

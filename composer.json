@@ -1,7 +1,7 @@
 {
     "name": "eden/language",
     "type": "library",
-    "description": "Eden language component",
+    "description": "Eden language component.",
     "keywords": ["eden", "library"],
     "homepage": "http://eden-php.com",
     "license": "MIT",
@@ -13,12 +13,9 @@
     ],
     "require": {
         "php": ">=5.3.1",
-		"eden/core": "1.*",
-		"eden/system": "1.*",
-		"eden/type": "1.*"
+		"eden/file": "2.*",
     },
     "autoload": {
-         "psr-0": { "Eden\\Language\\": "" }
-    },
-	"target-dir": "Eden/Language"
+         "psr-4": { "Eden\\Language\\": "/src" }
+    }
 }
