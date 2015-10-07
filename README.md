@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/Eden-PHP/Language.png)](https://travis-ci.org/Eden-PHP/Language)
+===
 # Languages
 
 Languages in *Eden* are fairly robust, simply defined and designed to work with other translating services such as *Google Translate*. The follow figure shows how to set up a french translator.
