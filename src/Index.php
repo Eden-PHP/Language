@@ -17,9 +17,10 @@ use Eden\File\Index as File;
  * overloaded and overrided as well as provide some basic class
  * loading patterns.
  *
- * @vendor Eden
- * @package Language
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  Language
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Index extends Base implements \ArrayAccess, \Iterator
 {
@@ -31,6 +32,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
      * Loads the translation set
      *
      * @param string|array
+     *
      * @return void
      */
     public function __construct($language = array())
@@ -63,6 +65,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
      * the key to the value of the key
      *
      * @param string
+     *
      * @return string
      */
     public function get($key)
@@ -112,7 +115,8 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * isset using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
+     * @param *scalar|null|bool $offset The key to test if exists
+     *
      * @return bool
      */
     public function offsetExists($offset)
@@ -126,8 +130,9 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * returns data using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @return bool
+     * @param *scalar|null|bool $offset The key to get
+     *
+     * @return mixed
      */
     public function offsetGet($offset)
     {
@@ -142,6 +147,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
      *
      * @param *scalar|null|bool
      * @param mixed
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -155,8 +161,9 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * unsets using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @return bool
+     * @param *scalar|null|bool $offset The key to unset
+     *
+     * @return void
      */
     public function offsetUnset($offset)
     {
@@ -181,6 +188,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
      * Saves the language to a file
      *
      * @param string|null
+     *
      * @return this
      */
     public function save($file = null)
@@ -213,6 +221,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
      *
      * @param *string
      * @param *string
+     *
      * @return this
      */
     public function translate($key, $value)
