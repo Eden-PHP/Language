@@ -1,9 +1,9 @@
 <?php //-->
-/*
- * This file is part of the Language package of the Eden PHP Library.
- * (c) 2013-2014 Openovate Labs
+/**
+ * This file is part of the Eden PHP Library.
+ * (c) 2014-2016 Openovate Labs
  *
- * Copyright and license information can be found at LICENSE
+ * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
  */
 
@@ -12,25 +12,30 @@ namespace Eden\Language;
 use Eden\File\Index as File;
 
 /**
- * The base class for all classes wishing to integrate with Eden.
- * Extending this class will allow your methods to seemlessly be
- * overloaded and overrided as well as provide some basic class
- * loading patterns.
+ * Language class implementation
  *
- * @vendor Eden
- * @package Language
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  Language
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Index extends Base implements \ArrayAccess, \Iterator
 {
-
+    /**
+     * @var array $language The language translation list
+     */
     protected $language = array();
-    protected $file     = null;
+
+    /**
+     * @var array $file The language file to save to
+     */
+    protected $file = null;
     
     /**
      * Loads the translation set
      *
-     * @param string|array
+     * @param string|array $language the translation to load
+     *
      * @return void
      */
     public function __construct($language = array())
@@ -63,6 +68,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
      * the key to the value of the key
      *
      * @param string
+     *
      * @return string
      */
     public function get($key)
@@ -112,7 +118,8 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * isset using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
+     * @param *scalar|null|bool $offset The key to test if exists
+     *
      * @return bool
      */
     public function offsetExists($offset)
@@ -126,8 +133,9 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * returns data using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @return bool
+     * @param *scalar|null|bool $offset The key to get
+     *
+     * @return mixed
      */
     public function offsetGet($offset)
     {
@@ -142,6 +150,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
      *
      * @param *scalar|null|bool
      * @param mixed
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -155,8 +164,9 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * unsets using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @return bool
+     * @param *scalar|null|bool $offset The key to unset
+     *
+     * @return void
      */
     public function offsetUnset($offset)
     {
@@ -180,7 +190,8 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * Saves the language to a file
      *
-     * @param string|null
+     * @param string|null $file The file to save to
+     *
      * @return this
      */
     public function save($file = null)
@@ -211,8 +222,9 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * Sets the translated value to the specified key
      *
-     * @param *string
-     * @param *string
+     * @param *string $key   The translation key
+     * @param *string $value The default value if we cannot find the translation
+     *
      * @return this
      */
     public function translate($key, $value)
