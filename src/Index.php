@@ -1,9 +1,9 @@
 <?php //-->
-/*
- * This file is part of the Language package of the Eden PHP Library.
- * (c) 2013-2014 Openovate Labs
+/**
+ * This file is part of the Eden PHP Library.
+ * (c) 2014-2016 Openovate Labs
  *
- * Copyright and license information can be found at LICENSE
+ * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
  */
 
@@ -12,10 +12,7 @@ namespace Eden\Language;
 use Eden\File\Index as File;
 
 /**
- * The base class for all classes wishing to integrate with Eden.
- * Extending this class will allow your methods to seemlessly be
- * overloaded and overrided as well as provide some basic class
- * loading patterns.
+ * Language class implementation
  *
  * @vendor   Eden
  * @package  Language
@@ -24,14 +21,20 @@ use Eden\File\Index as File;
  */
 class Index extends Base implements \ArrayAccess, \Iterator
 {
-
+    /**
+     * @var array $language The language translation list
+     */
     protected $language = array();
-    protected $file     = null;
+
+    /**
+     * @var array $file The language file to save to
+     */
+    protected $file = null;
     
     /**
      * Loads the translation set
      *
-     * @param string|array
+     * @param string|array $language the translation to load
      *
      * @return void
      */
@@ -187,7 +190,7 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * Saves the language to a file
      *
-     * @param string|null
+     * @param string|null $file The file to save to
      *
      * @return this
      */
@@ -219,8 +222,8 @@ class Index extends Base implements \ArrayAccess, \Iterator
     /**
      * Sets the translated value to the specified key
      *
-     * @param *string
-     * @param *string
+     * @param *string $key   The translation key
+     * @param *string $value The default value if we cannot find the translation
      *
      * @return this
      */
