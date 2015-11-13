@@ -1,11 +1,16 @@
 ![logo](http://eden.openovate.com/assets/images/cloud-social.png) Eden Language
 ====
-[![Build Status](https://api.travis-ci.org/Eden-PHP/Language.png)](https://travis-ci.org/Eden-PHP/Language)
+[![Build Status](https://api.travis-ci.org/Eden-PHP/Language.svg)](https://travis-ci.org/Eden-PHP/Language)
 ====
 
-- [Install](#install)
-- [Introduction](#intro)
-- [Contributing](#contributing)
+ - [Install](#install)
+ - [Introduction](#intro)
+ - [API](#api)
+    - [get](#get)
+    - [getLanguage](#getLanguage)
+    - [save](#save)
+    - [translate](#translate)
+ - [Contributing](#contributing)
 
 ====
 
@@ -86,6 +91,108 @@ $french->save('/path/to/french.php');
 ```
 
 ====
+
+<a name="api"></a>
+## API
+
+==== 
+
+<a name="get"></a>
+
+### get
+
+Returns the translated key. if the key is not set it will set the key to the value of the key 
+
+#### Usage
+
+```
+eden('language')->get(string );
+```
+
+#### Parameters
+
+ - `string `
+
+Returns `string`
+
+#### Example
+
+```
+eden('language')->get();
+```
+
+==== 
+
+<a name="getLanguage"></a>
+
+### getLanguage
+
+Return the language set 
+
+#### Usage
+
+```
+eden('language')->getLanguage();
+```
+
+#### Parameters
+
+Returns `array`
+
+==== 
+
+<a name="save"></a>
+
+### save
+
+Saves the language to a file 
+
+#### Usage
+
+```
+eden('language')->save(string|null $file);
+```
+
+#### Parameters
+
+ - `string|null $file` - The file to save to
+
+Returns `this`
+
+#### Example
+
+```
+eden('language')->save();
+```
+
+==== 
+
+<a name="translate"></a>
+
+### translate
+
+Sets the translated value to the specified key 
+
+#### Usage
+
+```
+eden('language')->translate(*string $key, *string $value);
+```
+
+#### Parameters
+
+ - `*string $key` - The translation key
+ - `*string $value` - The default value if we cannot find the translation
+
+Returns `this`
+
+#### Example
+
+```
+eden('language')->translate('foo', 'foo');
+```
+
+==== 
 
 <a name="contributing"></a>
 #Contributing to Eden
